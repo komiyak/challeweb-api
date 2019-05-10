@@ -29,8 +29,8 @@ group :development, :test do
 
   # RSpec for Rails
   gem 'rspec-rails', '~> 3'
-  # For setting up Ruby objects as test data
-  gem 'factory_bot', '~> 5'
+  # For setting up Ruby objects as test data for Rails
+  gem 'factory_bot_rails', '~> 5'
 end
 
 group :development do
