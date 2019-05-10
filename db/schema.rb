@@ -20,9 +20,28 @@ ActiveRecord::Schema.define(version: 2019_05_10_073832) do
     t.datetime "created_at", null: false
   end
 
+  create_table "user_years", id: :serial, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "year_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["user_id", "year_id"], name: "index_user_years_on_user_id_and_year_id", unique: true
+  end
+
+  create_table "users", id: :serial, force: :cascade do |t|
+    t.text "sei", null: false
+    t.text "mei", null: false
+    t.integer "school_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["school_id"], name: "index_users_on_school_id"
+  end
+
   create_table "years", id: :serial, force: :cascade do |t|
     t.text "name", null: false
     t.datetime "created_at", null: false
   end
 
+  add_foreign_key "user_years", "users"
+  add_foreign_key "user_years", "years"
+  add_foreign_key "users", "schools"
 end
