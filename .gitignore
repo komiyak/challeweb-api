@@ -20,6 +20,7 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+.env
 
 # Ignore project files of the RubyMine.
 /.generators
