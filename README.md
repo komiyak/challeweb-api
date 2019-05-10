@@ -20,3 +20,11 @@ For example:
 sudo apt install libpq-dev
 ```
 See https://stackoverflow.com/a/27277212
+
+
+## Local development
+
+You should start containers for support.
+```
+docker-compose -f docker-compose.development.yml up
+```
