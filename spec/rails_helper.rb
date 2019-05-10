@@ -58,4 +58,7 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  # See https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md#rspec
+  config.include FactoryBot::Syntax::Methods
 end
