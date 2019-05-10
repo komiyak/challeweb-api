@@ -31,6 +31,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3'
   # For setting up Ruby objects as test data for Rails
   gem 'factory_bot_rails', '~> 5'
+  # For generating fake data
+  gem 'faker', '~> 1'
 end
 
 group :development do
