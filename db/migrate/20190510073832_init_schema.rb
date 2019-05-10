@@ -28,5 +28,18 @@ class InitSchema < ActiveRecord::Migration[5.2]
     end
 
     add_index :user_years, [:user_id, :year_id], unique: true
+
+    create_table :o_auth_lines do |t|
+      t.text :sub, null: false
+
+      t.datetime :created_at, null: false
+    end
+
+    create_table :user_o_auth_lines do |t|
+      t.references :user, type: :integer, index: { unique: true }, foreign_key: true, null: false
+      t.references :o_auth_line, type: :integer, index: { unique: true }, foreign_key: true, null: false
+
+      t.datetime :created_at, null: false
+    end
   end
 end

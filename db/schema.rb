@@ -15,9 +15,22 @@ ActiveRecord::Schema.define(version: 2019_05_10_073832) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "o_auth_lines", force: :cascade do |t|
+    t.text "sub", null: false
+    t.datetime "created_at", null: false
+  end
+
   create_table "schools", id: :serial, force: :cascade do |t|
     t.text "name", null: false
     t.datetime "created_at", null: false
+  end
+
+  create_table "user_o_auth_lines", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "o_auth_line_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["o_auth_line_id"], name: "index_user_o_auth_lines_on_o_auth_line_id", unique: true
+    t.index ["user_id"], name: "index_user_o_auth_lines_on_user_id", unique: true
   end
 
   create_table "user_years", id: :serial, force: :cascade do |t|
@@ -41,6 +54,8 @@ ActiveRecord::Schema.define(version: 2019_05_10_073832) do
     t.datetime "created_at", null: false
   end
 
+  add_foreign_key "user_o_auth_lines", "o_auth_lines"
+  add_foreign_key "user_o_auth_lines", "users"
   add_foreign_key "user_years", "users"
   add_foreign_key "user_years", "years"
   add_foreign_key "users", "schools"

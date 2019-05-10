@@ -1,0 +1,2 @@
+class OAuthLine < ApplicationRecord
+end
