@@ -30,7 +30,7 @@ class InitSchema < ActiveRecord::Migration[5.2]
     add_index :user_years, [:user_id, :year_id], unique: true
 
     create_table :o_auth_lines do |t|
-      t.text :sub, null: false
+      t.text :sub, null: false, index: { unique: true }
 
       t.datetime :created_at, null: false
     end

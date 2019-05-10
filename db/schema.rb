@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_05_10_073832) do
   create_table "o_auth_lines", force: :cascade do |t|
     t.text "sub", null: false
     t.datetime "created_at", null: false
+    t.index ["sub"], name: "index_o_auth_lines_on_sub", unique: true
   end
 
   create_table "schools", id: :serial, force: :cascade do |t|
