@@ -31,7 +31,7 @@ docker-compose -f docker-compose.development.yml up
 
 Then, just run followings.
 ```
-bundle install --path vendor/bundle
+bundle --path vendor/bundle
 bundle exec rake db:reset
 bundle exec rails server
 ```
