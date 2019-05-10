@@ -35,3 +35,9 @@ bundle install --path vendor/bundle
 bundle exec rake db:reset
 bundle exec rails server
 ```
+
+# Environment variables
+
+| Name | Summary |
+| --- | --- |
+| CORS_ORIGIN | (Optional) the default value is `*`. It is for the limitation for CORS. |
