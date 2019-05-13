@@ -9,3 +9,19 @@ docker pull swaggerapi/swagger-editor
 docker run -d -p 80:8080 swaggerapi/swagger-editor
 ```
 See https://github.com/swagger-api/swagger-editor
+
+# Build the static html from the OpenAPI Spec.
+You will prepare these environments.
+
+- java (JDK)
+- maven
+
+And then, run this command.
+```
+./build_html.sh
+```
+
+Finaly, the static html will be built.
+```
+out/index.html
+```
