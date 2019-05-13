@@ -1,5 +1,6 @@
 # OpenAPI Specification
 We used v3.0.0
+
 See https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md
 
 # Swagger Editor
