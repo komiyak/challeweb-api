@@ -33,5 +33,6 @@ module ChallewebApi
     config.api_only = true
 
     config.paths.add 'app/libs', eager_load: true
+    config.paths.add 'app/tasks', eager_load: true
   end
 end
