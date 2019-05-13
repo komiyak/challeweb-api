@@ -1,0 +1,35 @@
+openapi: 3.0.0
+info:
+  title: "Challeweb API"
+  description: "This is a API specification of challeweb-api."
+  version: "1.0.0"
+servers:
+  - url: https://api.example.com
+    description: An example server.
+
+paths:
+  /schools:
+    get:
+      summary: Returns a list of schools.
+      tags:
+        - seeds
+      responses:
+        '200':
+          description: the list of schools.
+  /years:
+    get:
+      summary: Returns a list of years.
+      tags:
+        - seeds
+      responses:
+        '200':
+          description: the list of years.
+
+  /users:
+    get:
+      summary: Returns a list of users.
+      tags:
+        - users
+      responses:
+        '200':
+          description: the list of users.
