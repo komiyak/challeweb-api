@@ -25,3 +25,8 @@ Finaly, the static html will be built.
 ```
 out/index.html
 ```
+
+# Deploy the static html to the S3 bucket.
+```
+DEPLOY_TO=your-s3-bucket/path ./deploy_html.sh
+```
