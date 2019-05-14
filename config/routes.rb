@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  get 'years/index'
-  get 'schools/index'
+  resources :years, only: [:index]
+  resources :schools, only: [:index]
+  resources :users, only: [:index]
 end
