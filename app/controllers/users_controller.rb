@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
   def index
-    render json: UserSerializer.new(User.order(id: :desc))
+    users = User.order(id: :desc).page(params[:page]).per(params[:per_page])
+
+    render json: UserSerializer.new(
+      users,
+      { meta: get_paging_structure(users) }
+    )
   end
 end
