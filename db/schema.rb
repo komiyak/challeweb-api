@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2019_05_10_073832) do
 
   create_table "schools", id: :serial, force: :cascade do |t|
     t.text "name", null: false
+    t.integer "order_number", null: false
     t.datetime "created_at", null: false
   end
 
@@ -52,6 +53,7 @@ ActiveRecord::Schema.define(version: 2019_05_10_073832) do
 
   create_table "years", id: :serial, force: :cascade do |t|
     t.text "name", null: false
+    t.integer "order_number", null: false
     t.datetime "created_at", null: false
   end
 
