@@ -33,3 +33,9 @@ paths:
       responses:
         '200':
           description: the list of users.
+    parameters:
+    - name: year_id
+      in: query
+      description: 年度
+      schema:
+        type: integer
