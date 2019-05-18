@@ -8,7 +8,7 @@
     }
   ],
   "scripts": {
-    "postdeploy": "bundle exec db:drop db:setup sample_data:setup"
+    "postdeploy": "bundle exec db:setup"
   },
   "env": {
     "RACK_ENV": {
