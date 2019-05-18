@@ -1,0 +1,47 @@
+{
+  "name": "Challeweb Api",
+  "description": "The api for the challeweb application.",
+  "repository": "https://github.com/komiyak/challeweb-api",
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ],
+  "scripts": {
+    "postdeploy": "bundle exec db:drop db:setup sample_data:setup"
+  },
+  "env": {
+    "RACK_ENV": {
+      "required": true,
+      "value": "production"
+    },
+    "RAILS_ENV": {
+      "required": true,
+      "value": "production"
+    },
+    "RAILS_MAX_THREADS": {
+      "required": false,
+      "value": 4
+    },
+    "WEB_CONCURRENCY": {
+      "required": false,
+      "value": 2
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": false,
+      "value": true
+    },
+    "CORS_ORIGIN": {
+      "required": false,
+      "value": "*"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql:hobby-dev",
+      "options": {
+        "version": "10"
+      }
+    }
+  ]
+}
