@@ -26,6 +26,13 @@ gem 'rack-cors'
 # For the pagination
 gem 'kaminari', '~> 1.1'
 
+group :development, :test, :staging do
+  # For setting up Ruby objects as test data for Rails
+  gem 'factory_bot_rails', '~> 5'
+  # For generating fake data
+  gem 'faker', '~> 1'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -34,10 +41,6 @@ group :development, :test do
 
   # RSpec for Rails
   gem 'rspec-rails', '~> 3'
-  # For setting up Ruby objects as test data for Rails
-  gem 'factory_bot_rails', '~> 5'
-  # For generating fake data
-  gem 'faker', '~> 1'
 end
 
 group :development do
