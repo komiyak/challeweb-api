@@ -56,6 +56,4 @@ test:
 #
 production:
   <<: *default
-  database: challeweb-api_production
-  username: challeweb-api
-  password: <%= ENV['CHALLEWEB-API_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
